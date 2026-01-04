@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    /* FUSION Custom tokens */
+    --sidebar-bg: 222 47% 11%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-hover: 222 47% 15%;
+    --sidebar-active: 217 91% 60%;
+    --sidebar-muted: 220 9% 46%;
+
+    /* Status colors */
+    --status-todo: 220 14% 96%;
+    --status-todo-foreground: 220 9% 46%;
+    --status-progress: 217 91% 60%;
+    --status-progress-foreground: 0 0% 100%;
+    --status-review: 38 92% 50%;
+    --status-review-foreground: 0 0% 100%;
+    --status-done: 142 76% 36%;
+    --status-done-foreground: 0 0% 100%;
+
+    /* Priority colors */
+    --priority-low: 142 76% 36%;
+    --priority-medium: 38 92% 50%;
+    --priority-high: 0 84% 60%;
+    --priority-critical: 280 73% 50%;
+
+    /* Avatar colors */
+    --avatar-1: 217 91% 60%;
+    --avatar-2: 142 76% 36%;
+    --avatar-3: 280 73% 50%;
+    --avatar-4: 38 92% 50%;
+    --avatar-5: 0 84% 60%;
+
+    /* Badge */
+    --badge-bg: 220 14% 96%;
+    --badge-foreground: 220 9% 46%;
+
+    /* Gradient */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217 91% 60%) 0%,
+      hsl(280 73% 50%) 100%
+    );
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 220 14% 96%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 222 47% 15%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 222 47% 15%;
+    --accent-foreground: 220 14% 96%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 60%;
+
+    --sidebar-bg: 222 47% 6%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-hover: 222 47% 11%;
+    --sidebar-active: 217 91% 60%;
+    --sidebar-muted: 220 9% 50%;
+
+    --badge-bg: 222 47% 15%;
+    --badge-foreground: 220 9% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+}
+
+@layer utilities {
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-sidebar-foreground/70 hover:bg-sidebar-hover hover:text-sidebar-foreground transition-all duration-200 cursor-pointer;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary text-primary-foreground font-medium shadow-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
